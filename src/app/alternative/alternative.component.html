@@ -1,0 +1,9 @@
+<p>alternative works!</p>
+<table >
+    <tr *ngFor="let item of teacher">
+        <td *ngIf="!item.isShow">{{item.Id}}</td>
+        <td *ngIf="!item.isShow">{{item.name}}</td>
+        <td *ngIf="!item.isShow">{{item.age}}</td>
+ <td><button (click)="visible(item)">show</button></td>
+    </tr>
+</table>

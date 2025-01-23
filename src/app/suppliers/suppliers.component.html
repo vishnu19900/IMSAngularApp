@@ -1,0 +1,89 @@
+<!-- <!-- <table>
+    <tr>
+      <th>Serial No</th>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let item of employeeList; let i = index;">
+      <td *ngIf="!item.isShow">{{i+1}}</td>
+      <td [hidden]="item.isShow">{{item.Id}}</td>
+      <td [hidden]="item.isShow">{{item.name }}</td>
+      <td *ngIf="!item.isShow">{{item.age }}</td>
+      <td><button (click)="visiblity(item)">visible</button></td>
+    </tr>
+  </table><br>
+  
+  <table>
+    <tr>
+      <th>Serial No</th>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Action</th>
+    </tr>
+  <tr *ngFor="let item of employeeList; let i = index;" [ngClass]="{'mycolor':item.isColor}">
+      <td>{{i+1}}</td>
+      <td>{{item.Id}}</td>
+      <td>{{item.name }}</td>
+      <td>{{item.age }}</td>
+      <td><button (click)="backgroundColor(item)">Color</button></td>
+    </tr>
+  </table>
+  <br> -->
+<!-- <a routerLink="/addsuppliers" > Add Suppliers </a>
+
+  <table>
+    <tr>
+      
+      <th>Id</th>
+      <th>Supplier Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th>Details</th>
+      
+    </tr>
+    <tr *ngFor="let item of supplierList; let i = index;"
+      [ngClass]="{'red':item.isAlternateColor ,'green': !item.isAlternateColor }">
+      <td>{{i+1}}</td>
+      <td>{{item.id}}</td>
+      <td>{{item.supplier_Name}}</td>
+      <td><a routerLink="/updatesuppliers/{{item.id}}">Edit</a></td>
+      <td><a href="javascript:void(0)" (click)="deleteSupplier(item.id)">Delete</a></td>
+      <td><a routerLink="/detail-suppliers/{{item.id}}">Details</a></td>
+      
+    </tr>
+    
+  </table> -->
+<div class="container">
+  <div class="row end-xs mt -1">
+    <div class="col-xs-12">
+    </div>
+    <input [(ngModel)]="filtertext" (keyup)="filterdata()" type="text" class="searchbox" placeholder="enter a box" />
+    <div class="container">
+      <div class="mat-elevation-28 "></div>
+    </div>
+    <mat-table [dataSource]="supplierList">
+
+      <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Supplier_Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="supplier_Name">
+        <mat-header-cell *matHeaderCellDef> Supplier_Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.supplier_Name}} </mat-cell>
+      </ng-container>
+
+
+      <mat-header-row *matHeaderRowDef="['id','supplier_Name']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['id','supplier_Name']"></mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSize]="2" [pageSizeOptions]="[2,4]"></mat-paginator>
+
+
+  </div>

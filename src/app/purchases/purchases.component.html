@@ -1,0 +1,79 @@
+<!-- <p>purchases works!</p>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>SupplierId</th>
+        <th>ProductId</th>
+        <th>Number_Received</th>
+        <th>purchases_date</th>
+        <th>Details</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+
+        <tr *ngFor="let item of purchasesList;let i = index;">
+            <td>{{i+1}}</td>
+            
+            <td>{{item.supplierId}}</td>
+            <td>{{item.productId}}</td>
+            <td>{{item.number_Received}}</td>
+            <td>{{item.purchases_date}}</td>
+            <td><a routerLink="/Purchasesdetail/{{item.id}}">detail</a></td>
+            <td><a href="javascript:void(0)"(click)="deletePurchases(item.id)">Delete</a></td>
+            <td><a routerLink="/UpdatePurchases/{{item.id}}">Edit</a></td>
+        </tr>
+        
+    
+</table> -->
+
+<div class="container">
+    <div class="row end-xs mt -1">
+    <div class="col-xs-12">
+    </div>
+    <input [(ngModel)]="filtertext" 
+    (keyup)="filterdata()" type="text" class="searchbox" placeholder="enter a box"/>
+    <div class="container">
+        <div class="mat-elevation-28 "></div>
+      </div>
+
+
+
+<mat-table [dataSource]="purchasesList">
+    
+       
+             
+            
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="supplierId">
+        <mat-header-cell *matHeaderCellDef> SupplierId </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.supplierId}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="productId">
+        <mat-header-cell *matHeaderCellDef> productId</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.productId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="number_Received">
+        <mat-header-cell *matHeaderCellDef> Number_Received </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.number_Received}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="['id','supplierId','productId','number_Received']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['id','supplierId','productId','number_Received']"></mat-row>
+</mat-table>
+
+
+<mat-paginator [length]="10"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10]"
+              >
+</mat-paginator>
+</div>

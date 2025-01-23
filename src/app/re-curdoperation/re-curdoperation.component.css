@@ -1,0 +1,29 @@
+table, th , td  {
+  border: 1px solid red;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color:yellow;
+}
+table tr:nth-child(even) {
+  background-color: skyblue;
+}
+
+.mycolor {
+  color: black;
+  font-weight: bold;
+  background-color: blue !important;
+}
+
+.red {
+  color: black;
+  font-weight: bold;
+  background-color: red !important;
+}
+
+.green {
+  color: black;
+  font-weight: bold;
+  background-color: green !important;
+}

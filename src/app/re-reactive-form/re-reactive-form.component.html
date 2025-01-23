@@ -1,0 +1,9 @@
+<p>re-reactive-form works!</p>
+<form [formGroup]="vishnuform" (ngSubmit)="Loginform()">
+    <input type="text" placeholder="Enter Email" formControlName="email">
+    <p *ngIf=" vishnuform.controls.email.valid == false">Please </p>
+    <input type="password" placeholder="Enter Password" formControlName="password">
+    <p *ngIf="vishnuform.controls.email.valid">
+    <button>Login</button>
+
+</form>

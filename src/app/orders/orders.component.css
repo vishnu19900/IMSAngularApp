@@ -1,0 +1,11 @@
+.example-container {
+    margin: 16px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  mat-paginator {
+    margin-top: 10px;
+  }

@@ -1,0 +1,43 @@
+{
+    "Employeelist": [
+        {
+            "Employee": 1,
+            "name": "vishnukant",
+            "phoneNo": 11111,
+            "Empsell": [
+                {
+                    "Id": 1,
+                    "EmpId": 5,
+                    "Type": "Lifeinsurance",
+                    "Amount": 5000
+                },
+                {
+                    "Id": 2,
+                    "EmpId": 10,
+                    "Type": "carinsurance",
+                    "Amount": 5000
+                }
+            ]
+        },
+    
+
+
+{
+    "Employee": 1,
+    "name": "vishnukant",
+    "phoneNo": 11111,
+    "Empsell": [
+        {
+            "Id": 1,
+            "EmpId": 5,
+            "Type": "Lifeinsurance",
+            "Amount": 5000
+        },
+        {
+            "Id": 2,
+            "EmpId": 10,
+            "Type": "carinsurance",
+            "Amount": 5000
+        }
+    ]
+}

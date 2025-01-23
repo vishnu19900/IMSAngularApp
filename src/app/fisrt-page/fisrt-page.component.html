@@ -1,0 +1,9 @@
+<ul>
+    <li *ngFor="let item of myFruits">{{item}}</li>
+</ul>
+<ul>
+    <li *ngFor="let item of myFruitsList">
+        Fruit Name:{{item.name|uppercase}} |
+        Fruit count:{{item.value|currency}}
+    </li>
+</ul>

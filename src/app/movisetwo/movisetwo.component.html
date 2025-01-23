@@ -1,0 +1,40 @@
+<input type="text"  [(ngModel)]="searching" class="searchbox">
+
+<input type="button" value="search your movise" (click)="searchMovises()">
+
+
+<mat-table [dataSource]="moviselists">
+    <!-- User name Definition -->
+    <ng-container matColumnDef="Title">
+      <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.Title}} </mat-cell>
+    </ng-container>
+  
+    <!-- Age Definition -->
+    <ng-container matColumnDef="Year">
+      <mat-header-cell *matHeaderCellDef> Year</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.Year}} </mat-cell>
+    </ng-container>
+  
+    <!-- Title Definition -->
+    <ng-container matColumnDef="Type">
+      <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.Type}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="imdbID">
+        <mat-header-cell *matHeaderCellDef> imdbID </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.imdbID}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Poster">
+        <mat-header-cell *matHeaderCellDef> Poster</mat-header-cell>
+        <mat-cell *matCellDef="let row"><img [src]="row.Poster" width="50"> </mat-cell>
+      </ng-container>
+      
+    <!-- Header and Row Declarations -->
+    <mat-header-row *matHeaderRowDef="['Title','Year', 'Type', 'imdbID','Poster']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['Title','Year','Type', 'imdbID', 'Poster']"></mat-row>
+  </mat-table>
+
+  <mat-paginator [length]="_totalresult" [pageSize]="10" [pageSizeOptions]="[5, 10, 25]" [showFirstLastButtons]="true"
+  (page)="onPageChange($event)"></mat-paginator>

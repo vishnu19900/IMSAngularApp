@@ -1,0 +1,26 @@
+<p>ordersupdate works!</p>
+<form [formGroup]="orderupdate" (ngSubmit)="updateproduct()">
+  
+    <input type="text" placeholder="enter a id " formControlName="id">
+    <br>
+    <input type="text" placeholder="enter a title" formControlName="title">
+    <br>
+    <input type="text" placeholder="enter a first" formControlName="first">
+    <br>
+    <input type="text" placeholder="enter a  middle" formControlName="middle">
+    <br>
+    <input type="text" placeholder="enter a  last" formControlName="last">
+    <br>
+    <br>
+    <input type="text" placeholder="enter a mobileNo" formControlName="mobileNo">
+    <br>
+    <input type="text" placeholder="enter a  productId" formControlName="productId">
+    <br><input type="text" placeholder="enter a numberShipped" formControlName="numberShipped">
+    <br>
+    <input type="date" placeholder="enter a orderDate" formControlName="orderDate">
+   <br> <input type="text" placeholder="enter a suppliersId" formControlName="suppliersId">
+    <br>
+    <input type="submit" value="submit">
+
+</form>
+

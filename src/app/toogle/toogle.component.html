@@ -1,0 +1,15 @@
+<p>toogle works!</p>
+
+<div *ngIf="role == 'admin' ">    
+    <h1>Admin is activted</h1>
+    <h3>I have completed BCA in 2022</h3>    
+
+</div>
+<div *ngIf="role == 'user'">
+    <h3>User is activted</h3>
+</div>
+
+<div>
+<!-- <h1 *ngIf="display == true" >vishnu kant thakur</h1> -->
+<button (click)="toggle()">visible</button>
+<div>

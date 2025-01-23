@@ -1,0 +1,14 @@
+<p>update-purchases works!</p>
+<form [formGroup]="purchasesForm" (ngSubmit)="updatepurchases()">
+    <input type="text" placeholder="enter a Id"formControlName="id">
+<br>
+<input type="text" placeholder="enter a SupplierId"formControlName="supplierId">
+<br>
+<input type="text" placeholder="ProductId"formControlName="productId">
+<br>
+<input type="text" placeholder="enter a Number_Received"formControlName="number_Received">
+<br>
+<input type="date" placeholder="enter a purchases_date"formControlName="purchases_date">
+<br>
+<input type="submit" value="submit">
+</form>

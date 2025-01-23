@@ -1,0 +1,103 @@
+<!-- <table>
+    <tr>
+      
+      <th>Id</th> 
+      <th>ProductName</th>
+      <th>PartNumber</th> 
+      <th>ProductLabel</th>
+      <th>StartingInventory</th>
+      <th>InventoryReceived</th>
+      <th>Inventoryshipped</th>
+      <th>InventoryOnHand</th>
+      <th>MinimumRequired</th>
+      <th>Edit</th>
+      <th>details</th>
+      <th>update</th>
+      
+      
+    </tr>
+    <tr *ngFor="let item of productList; let i = index;">
+      <td>{{i+1}}</td>
+      <td>{{item.id}}</td>
+      <td>{{item.productName}}</td>
+      <td>{{item.partNumber}}</td> 
+      <td>{{item.productLabel}}</td>
+      <td>{{item.startingInventory}}</td>
+      <td>{{item.inventoryReceived}}</td>
+      <td>{{item.inventoryshipped}}</td> 
+      <td>{{item.inventoryOnHand}}</td>
+      <td>{{item.minimumRequired}}</td> 
+      <td><a routerLink="/productDetails/{{item.id}}">details</a><td>
+      <td><a routerLink="/product-update/{{item.id}}">Update</a></td>
+      <td><a href="javascript:void(0)"(click)="deteteProducts(item.id)">detele</a></td>
+      
+      
+      
+    </tr>
+  </table> -->
+  <div class="container">
+  <div class="row end-xs mt -1">
+    <div class="col-xs-12">
+    </div>
+    <input [(ngModel)]="filtertext" 
+    (keyup)="filterdata()" type="text" class="searchbox" placeholder="enter a box"/>
+    <div class="container">
+        <div class="mat-elevation-28 "></div>
+      </div>
+
+  <mat-table [dataSource]="productList">
+    <!-- User name Definition -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container>
+  
+    <!-- Age Definition -->
+    <ng-container matColumnDef="productName">
+      <mat-header-cell *matHeaderCellDef> ProductName</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.productName}} </mat-cell>
+    </ng-container>
+  
+    <!-- Title Definition -->
+    <ng-container matColumnDef="partNumber">
+      <mat-header-cell *matHeaderCellDef>PartNumber</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.partNumber}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="productLabel">
+      <mat-header-cell *matHeaderCellDef>ProductLabel</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.productLabel}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="startingInventory">
+      <mat-header-cell *matHeaderCellDef>StartingInventory</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.startingInventory}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="inventoryReceived">
+      <mat-header-cell *matHeaderCellDef>InventoryReceived</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.inventoryReceived}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="inventoryshipped">
+      <mat-header-cell *matHeaderCellDef>Inventoryshipped</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.inventoryshipped}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="inventoryOnHand">
+      <mat-header-cell *matHeaderCellDef>InventoryOnHand</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.inventoryOnHand}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="['id','productName','partNumber','productLabel','startingInventory','inventoryReceived','inventoryshipped','inventoryOnHand']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['id','productName','partNumber','productLabel','startingInventory','inventoryReceived','inventoryshipped','inventoryOnHand']"></mat-row>
+  </mat-table>
+
+  <mat-paginator [length]="5"
+              [pageSize]="1"
+              showFirstLastButtons="true"
+              [pageSizeOptions]="[5, 10]"
+              >
+</mat-paginator>
+  </div>

@@ -1,0 +1,14 @@
+<p>add-purchases works!</p>
+<form [formGroup]="purchasesForm" (ngSubmit)="LoginPurchase()">   
+    <br>
+    <input type="text" placeholder="enter a SupplierId" formControlName="supplierid">
+    <br>
+    <input type="text" placeholder="enter a productId" formControlName="productId">
+    <br>
+    <input type="text" placeholder="enter a number_Received" formControlName="number_Received">
+    <br>
+    <input type="date" placeholder="enter a purchases_date" formControlName="purchases_date">
+    <br>
+    <button>submit</button>
+</form>
+

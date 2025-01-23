@@ -1,0 +1,44 @@
+<p>cricket works!</p>
+<mat-table [dataSource]="cricetdata">
+    <!-- User name Definition -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container>
+  
+    <!-- Age Definition -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+  
+    <!-- Title Definition -->
+    <ng-container matColumnDef="startDate">
+      <mat-header-cell *matHeaderCellDef> startDate </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.startDate}} </mat-cell>
+    </ng-container>
+  
+    <!-- Title Definition -->
+    <ng-container matColumnDef="endDate">
+        <mat-header-cell *matHeaderCellDef> EndDate </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.endDate}} </mat-cell>
+      </ng-container>
+      <!-- Title Definition -->
+    <ng-container matColumnDef="odi">
+        <mat-header-cell *matHeaderCellDef> odi </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.odi}} </mat-cell>
+      </ng-container>
+      <!-- Title Definition -->
+    <ng-container matColumnDef="t20">
+        <mat-header-cell *matHeaderCellDef> t20 </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.t20}} </mat-cell>
+      </ng-container>
+      <!-- Title Definition -->
+    <ng-container matColumnDef="test">
+        <mat-header-cell *matHeaderCellDef> test </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.test}} </mat-cell>
+      </ng-container>
+    <!-- Header and Row Declarations -->
+    <mat-header-row *matHeaderRowDef="['id', 'name','startDate','endDate','odi','t20','test']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['id','name', 'startDate','endDate','odi','t20','test']"></mat-row>
+  </mat-table>

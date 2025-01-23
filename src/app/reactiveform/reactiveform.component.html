@@ -1,0 +1,12 @@
+<p>reactiveform works!</p>
+<form [formGroup] ="loginForm" (ngSubmit)="LoginUser()" >
+   <input type="text"  placeholder="enter a name" formControlName="emailAddress"/>
+   <p style="color: red;" *ngIf="loginForm.controls.emailAddress.valid == false">Please enter correct email addres!</p>
+   <br><br/>
+   <input type="password"  placeholder="enter a password" name="Password" formControlName="password"/>
+   <p style="color:blue;"*ngIf="loginForm.controls.password.valid==false">Please enter number </p> 
+   <br><br/>
+   <button>Login</button>
+   
+
+</form>

@@ -1,0 +1,98 @@
+<!-- <p>orders works!</p>
+<table>
+    <tr>
+        <th>seriesNo</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>First</th>
+        <th>Middle</th>
+        <th>Last</th>
+        <th>MobileNo</th>
+        <th>ProductId</th>
+        <th>NumberShipped<th>
+        <th>OrderDate</th>
+        <th>SuppliersId</th>
+        <th>Details</th>
+        <th>DElete</th>
+        <th>edit<th>
+    </tr>
+    <tr *ngFor="let item of oderList;let i=index;" >
+        <td>{{i+1}}</td>
+        <td>{{item.id}}
+        <td>{{item.title}}</td>
+        <td>{{item.first}}</td>
+        <td>{{item.middle}}</td>
+        <td>{{item.last}}</td>
+        <td>{{item.mobileNo}}</td>
+        <td>{{item.productId}}</td>
+        <td>{{item.numberShipped}}</td>
+        <td>{{item.orderDate}}</td>
+        <td>{{item.suppliersId}}</td>
+     <td><a routerLink="/detailOrders/{{item.id}}">detail</a></td>
+        
+        <td><a routerLink="/ordersupdate/{{item.id}}">update</a></td>
+        
+      
+        <td><a href="javascripts:void(0)"(click)="deleteOrders(item.id)">detele</a></td> 
+    </tr>
+    
+    </table>
+
+    -->
+    <div class="container">
+      <div class="row end-xs mt -1">
+        <div class="col-xs-12">
+        <input [(ngModel)] ="filterText"
+        (keyup)="filterdata()" type="text" class="searchbox" placeholder="searching here"/>
+       </div>
+      </div>
+      <div class="container">
+        <div class="mat-elevation-28 "></div>
+      </div>
+    
+    
+    <mat-table matSort [dataSource]="oderList">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
+      </ng-container>
+    
+      <!-- User name Definition -->
+      <ng-container matColumnDef="middle">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Middle </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.middle }} </mat-cell>
+      </ng-container>
+    
+      <!-- Age Definition -->
+      <ng-container matColumnDef="first">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> First </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.first }} </mat-cell>
+      </ng-container>
+    
+      <!-- Title Definition -->
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.title }} </mat-cell>
+      </ng-container>
+    
+      <!-- Header and Row Declarations -->
+      <mat-header-row *matHeaderRowDef="['id', 'middle', 'first', 'title']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['id', 'middle', 'first', 'title']"></mat-row>
+    </mat-table>
+    
+    <mat-paginator
+      [pageSize]="5"
+      [showFirstLastButtons]="true"
+      [pageSizeOptions]="[5, 10, 25]">
+    </mat-paginator>
+    </div>
+  
+    
+
+
+      
+    
+
+
+
+

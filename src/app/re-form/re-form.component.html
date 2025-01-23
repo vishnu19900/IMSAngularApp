@@ -1,0 +1,14 @@
+<p>re-form works!</p>
+<form #userform="ngForm" (ngSubmit)="getdata(userform.value)">
+    <input type="text" placeholder="Enter Name" ngModel="name">
+    <br><br/>
+    <input type="text" placeholder="Enter Age" ngModel name="Age">
+    <br><br/>
+    <input type="text" placeholder="email"ngModel name="email">
+    <br><br/>
+    <input type="password" placeholder="Enter password"ng ngModel name="password">
+    <br><br/>
+    <button>registration</button>
+
+</form>
+<button (click)="getdata(userform.value)">hello</button>

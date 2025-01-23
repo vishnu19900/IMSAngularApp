@@ -1,0 +1,14 @@
+
+<form #basicForm="ngForm" (ngSubmit)="getdata(basicForm.value)" >
+    <input type="text" ngModel placeholder="enter name" name="name">
+<br><br/>
+    <input type="text" ngModel placeholder="enter Age" name="age">
+    <br><br/>
+
+    <input type="email" ngModel placeholder="enter gmail" name="email">
+    <br><br/>
+    
+    <input type="password" ngModel placeholder="enter password" name="pwd">
+    <br><br/>
+    <button> submit</button>
+</form>

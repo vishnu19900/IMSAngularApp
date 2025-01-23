@@ -1,0 +1,63 @@
+<p>re-curdoperation works!</p>
+<Table>
+    <th>Serial no</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <tr *ngFor="let emps of employeess;let i = index">
+       <td>{{i+1}}</td>
+       <td *ngIf="emps.isshow">{{emps.Id}}</td>
+       <td *ngIf="emps.isshow">{{emps.Name}}</td>
+       <td *ngIf="emps.isshow">{{emps.Age}}</td>
+       <td><button (click)="see(emps)">see</button></td>
+
+         
+    </tr>
+    
+</Table><br>
+
+<p>re-curdoperation works!</p>
+
+<table>
+    <th>Serial No</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <tr *ngFor="let emps of employeess;let i=index" [ngClass]="{'mycolor':emps.isColor}">
+        <td>{{i+1}}</td>
+        <td>{{emps.Id}}</td>
+        <td>{{emps.Name}}</td>
+        <td>{{emps.Age}}</td>
+        <td><button (click)="backgroundcolour(emps)">selectColor</button>
+    </tr>
+    
+</table><br>
+
+<table>
+    <th>Serial No</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <tr *ngFor="let emps of employeess;let i=index" 
+    [ngClass]="{'red':emps.isAlternateColor,'green':emps.isAlternateColor}">
+        <td>{{i+1}}</td>
+        <td>{{emps.Id}}</td>
+        <td>{{emps.Name}}</td>
+        <td>{{emps.Age}}</td>
+     </tr>
+    
+</table>
+
+<Table>
+    
+    <th>Id</th>
+    <th>Name</th>
+    
+    <tr *ngFor="let emps of workerss;let i = index">
+       <td>{{i+1}}</td>
+       <td>{{emps.Id}}</td>
+       <td>{{emps.name}}</td>
+    
+
+         
+    </tr></Table>
