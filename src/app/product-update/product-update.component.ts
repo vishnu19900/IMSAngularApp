@@ -27,16 +27,7 @@ export class ProductUpdateComponent {
           this.productForm.controls['inventoryReceived'].patchValue(res.inventoryReceived);
            this.productForm.controls['inventoryshipped'].patchValue(res.inventoryshipped);
            this.productForm.controls['inventoryOnHand'].patchValue(res.inventoryOnHand);
-           this.productForm.controls['minimumRequired'].patchValue(res.minimumRequired);
-
-
-
-
-
-
-
-
-         
+           this.productForm.controls['minimumRequired'].patchValue(res.minimumRequired);         
   });
 });
   }

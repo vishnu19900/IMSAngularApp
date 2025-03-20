@@ -52,7 +52,7 @@ updateproduct()
 {
   console.log(this.orderupdate.value);
   this._http.put('https://localhost:7031/api/Orders/OrderUpdate',this.orderupdate.value).subscribe((res:any)=>{
-    this._router.navigate(['/ordersupdate']);
+    this._router.navigate(['/orders']);
   });
 }
 }

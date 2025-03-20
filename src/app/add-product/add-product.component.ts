@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AddProductComponent {
 
-  constructor(private _router:Router,private _http:HttpClient) { }
+  constructor(private _router: Router, private _http: HttpClient) { }
 
 
   vishnu = new FormGroup({
@@ -26,10 +26,11 @@ export class AddProductComponent {
   });
   Loginuser() {
     console.warn(this.vishnu.value);
-    this._http.post('https://localhost:7031/api/product/Add_product',this.vishnu.value).subscribe((res:any)=>{this._router.navigate(['/addProduct']);
-
-  });
-
+    this._http.post('https://localhost:7031/api/product/Add_product', this.vishnu.value)
+      .subscribe((res: any) => {
+        this._router.navigate(['/product']);
+      });
+      
 
   }
 

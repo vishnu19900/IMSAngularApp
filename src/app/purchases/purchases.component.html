@@ -44,34 +44,49 @@
              
             
     <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
         <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
     </ng-container>
 
 
 
-    <ng-container matColumnDef="supplierId">
-        <mat-header-cell *matHeaderCellDef> SupplierId </mat-header-cell>
-        <mat-cell *matCellDef="let user"> {{user.supplierId}} </mat-cell>
+    <ng-container matColumnDef="supplier_Name">
+        <mat-header-cell *matHeaderCellDef> supplier_Name </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.supplier_Name}} </mat-cell>
     </ng-container>
 
 
-    <ng-container matColumnDef="productId">
-        <mat-header-cell *matHeaderCellDef> productId</mat-header-cell>
-        <mat-cell *matCellDef="let user"> {{user.productId}} </mat-cell>
+    <ng-container matColumnDef="productName">
+        <mat-header-cell *matHeaderCellDef> productName</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.productName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="number_Received">
-        <mat-header-cell *matHeaderCellDef> Number_Received </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> number_Received </mat-header-cell>
         <mat-cell *matCellDef="let user"> {{user.number_Received}} </mat-cell>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="['id','supplierId','productId','number_Received']"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: ['id','supplierId','productId','number_Received']"></mat-row>
+    <ng-container matColumnDef="purchase_date">
+        <mat-header-cell *matHeaderCellDef> purchase_date </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.purchase_date}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> action </mat-header-cell>
+        <mat-cell *matCellDef="let row"> 
+        <a routerLink="/UpdatePurchases/{{row.id}}">update</a> </mat-cell>
+       
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 </mat-table>
 
 
-<mat-paginator [length]="10"
+
+
+
+<mat-paginator [length]="10" showFirstLastButtons="true"
+
               [pageSize]="10"
               [pageSizeOptions]="[5, 10]"
               >

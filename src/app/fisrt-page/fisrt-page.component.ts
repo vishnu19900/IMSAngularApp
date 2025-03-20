@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-fisrt-page',
   templateUrl: './fisrt-page.component.html',
   styleUrls: ['./fisrt-page.component.css']
+
 })
 export class FisrtPageComponent {
   myFruits=[]=['Apple','Mango','grapes','papaya']
@@ -12,4 +13,9 @@ export class FisrtPageComponent {
     {'name':'grapes','value':30},
     {'name':'papaya','value':40},
   ]
+
+  name : any;
+
+  anothername="vishnu is green";
+
 }

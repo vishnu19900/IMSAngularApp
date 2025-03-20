@@ -13,30 +13,35 @@ export class PurchasesComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
   filtertext='';
   purchasesList = new MatTableDataSource<any>();
+  displayedColumns: string[] = ['id','supplier_Name','productName','number_Received','purchase_date','action'];
+
   constructor(private _http: HttpClient) {
     this.purchasesget();
   }
+
   ngOnInit(): void {
     this.purchasesget();
   }
+
   ngAfterViewInit(): void {
     this.purchasesList.paginator = this.paginator;
     this.purchasesList.sort=this.sort;
   }
+
   purchasesget() {
     this._http.get('https://localhost:7031/api/Purchases/GetAllData').subscribe((res: any) => {
       this.purchasesList.data = res;
-      console.log(this.purchasesList)
+      console.log(this.purchasesList.data)
     })
   }
+
   deletePurchases(id: any) {
     this._http.delete('https://localhost:7031/api/Purchases/deletePurchase?id=' + id)
       .subscribe((id: any) => {
         this.purchasesget()
-        console.log(this.purchasesList);
-
       })
   }
+
   filterdata()
   {
     this.purchasesList.filter = this.filtertext.trim().toLowerCase();

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class IfelseComponent {
   title = "vishnu kant thakur";
-  color="red";
+  color="green";
  // show=true;
 }
 //  prime:String='';

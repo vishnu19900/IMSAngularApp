@@ -10,7 +10,7 @@ export class EventComponent {
   data: Array<any> = [];
   constructor() {
     this.Show();
-  }
+  } 
 
   Show() {    
     for (let i = 5; i <= 10; i++) {

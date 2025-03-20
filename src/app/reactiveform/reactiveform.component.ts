@@ -21,7 +21,7 @@ export class ReactiveformComponent {
       
     }
     else{
-      alert('Please ener corect details');
+      alert('Please enter corect details');
     }
 
   }

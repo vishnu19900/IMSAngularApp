@@ -58,26 +58,55 @@
       </ng-container>
     
       <!-- User name Definition -->
-      <ng-container matColumnDef="middle">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Middle </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row.middle }} </mat-cell>
+      <ng-container matColumnDef="customer">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> customer</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.customer }} </mat-cell>
       </ng-container>
     
       <!-- Age Definition -->
-      <ng-container matColumnDef="first">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> First </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row.first }} </mat-cell>
+      <ng-container matColumnDef="mobileNo">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> mobileNo </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.mobileNo}} </mat-cell>
       </ng-container>
     
       <!-- Title Definition -->
-      <ng-container matColumnDef="title">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row.title }} </mat-cell>
+      <ng-container matColumnDef="orderDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> orderDate </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.orderDate}} </mat-cell>
       </ng-container>
+
+      <ng-container matColumnDef="productName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> productName </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.productName}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="supplier_Name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> supplier_Name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.supplier_Name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>price</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.price}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>action</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+           <a routerLink="/detailOrders/{{row.id}}">detail</a> 
+           <a routerLink="/ordersupdate/{{row.id}}">update</a> 
+        </mat-cell>
+      </ng-container>
+      //<ng-container matColumnDef="update">
+        //<mat-header-cell *matHeaderCellDef mat-sort-header>update</mat-header-cell>
+        //<mat-cell *matCellDef="let row">
+         //  <a routerLink="/ordersupdate/{{row.id}}">update</a> 
+        //</mat-cell>
+      //</ng-container>
+      
     
       <!-- Header and Row Declarations -->
-      <mat-header-row *matHeaderRowDef="['id', 'middle', 'first', 'title']"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: ['id', 'middle', 'first', 'title']"></mat-row>
+      <mat-header-row *matHeaderRowDef="['id','customer','mobileNo','orderDate','productName','supplier_Name','price','action']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['id','customer','mobileNo','orderDate','productName','supplier_Name','price','action']"></mat-row>
     </mat-table>
     
     <mat-paginator

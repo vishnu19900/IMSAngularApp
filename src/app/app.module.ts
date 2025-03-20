@@ -51,6 +51,7 @@ import { MoviseComponent } from './movise/movise.component';
 import { MovisetwoComponent } from './movisetwo/movisetwo.component';
 import { WeatherComponent } from './weather/weather.component';
 import { CricketComponent } from './cricket/cricket.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -105,6 +106,7 @@ import { CricketComponent } from './cricket/cricket.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    NgxSpinnerModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,

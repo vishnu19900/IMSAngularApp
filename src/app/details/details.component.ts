@@ -10,17 +10,29 @@ import { __param } from 'tslib';
 })
 export class DetailsComponent {
   supplierDetail:any;
-  constructor(private _http: HttpClient, private _route: Router, private _activatedroute: ActivatedRoute) {
+  constructor(private _http: HttpClient, private _route: Router, private _activatedroute: ActivatedRoute) 
+  {
     debugger;
-    this._activatedroute.params.subscribe(Params => {
-      let _sup_Id = Params['id'];
+    this.getId()
 
+  }
+  getId()
+  {
+    this._activatedroute.params.subscribe((Param:any) => {
+      //let _sup_Id = Param['id']; 
+      let _sup_Id = Param.id;
+        this.getDetail(_sup_Id)
+     });
+     
+  }
 
-      this._http.get('https://localhost:7031/api/Suppliers/dataDetails?Id=' + _sup_Id)
-        .subscribe((res: any) => {
-          this.supplierDetail = res;
-        });
+  
+
+  getDetail(id:number)
+  {
+    this._http.get('https://localhost:7031/api/Suppliers/details?Id=' + id)
+    .subscribe((res: any) => {
+      this.supplierDetail = res;
     });
-
   }
 }

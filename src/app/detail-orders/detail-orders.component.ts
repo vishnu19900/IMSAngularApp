@@ -9,17 +9,16 @@ import { __param } from 'tslib';
   styleUrls: ['./detail-orders.component.css']
 })
 export class DetailOrdersComponent {
-  ordersList:any;
-  constructor(private _http:HttpClient,private route:Router,private _activate:ActivatedRoute ){
+  ordersList: any;
+  constructor(private _http: HttpClient, private route: Router, private _activate: ActivatedRoute) {
     debugger;
-    this._activate.params.subscribe(Params=>{
-      let _ord_Id=Params['id'];
-    this._http.get('https://localhost:7031/api/Orders/Details?Id='+_ord_Id)
-     .subscribe((res:any)=>{
-     this.ordersList=res
+    this._activate.params.subscribe((value: any) => {
+      this._http.get('https://localhost:7031/api/Orders/Details?Id=' + value.id)
+        .subscribe((res: any) => {
+          this.ordersList = res
+        });
     });
-    });
-  
+
   }
 
 }
